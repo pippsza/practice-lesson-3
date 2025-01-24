@@ -1,7 +1,16 @@
 h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-ul, div {
-    margin-bottom: 100px;
+ul,
+div {
+  margin-bottom: 100px;
+}
+li {
+  list-style: none;
+  border: solid black 1px;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 400px;
+  margin-bottom: 20px;
 }
