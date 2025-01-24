@@ -13,3 +13,13 @@ export const createProductCardTemplate = arrayProducts => {
 };
 
 //  title rating thumbnail price brand
+export const createCardById = ({ title, brand, rating,  price, thumbnail, category }) => {
+
+return ` <div>
+        <h3>${title}</h3>
+        <p>${brand}</p>
+        <p> Rating:${rating} and price: ${price}</p>
+        <img src="${thumbnail}" alt="${category}">
+      </div> `
+
+}

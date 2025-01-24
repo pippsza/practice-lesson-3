@@ -1,9 +1,11 @@
 import './styles/normalize.css';
 import './styles/index.css';
-import { productTemplate } from './requests/products';
-import { createProductCardTemplate } from './services/markupService';
+import { productTemplate , getElemetById} from './requests/products';
+import { createProductCardTemplate , createCardById } from './services/markupService';
 
 const allProducts = document.querySelector('#allProducts');
+const form = document.querySelector('#singleProductForm');
+const singleProduct = document.querySelector('#singleProduct');
 
 const asyncProductTemplate = async () => {
   const {
@@ -12,4 +14,21 @@ const asyncProductTemplate = async () => {
   allProducts.innerHTML = createProductCardTemplate(products);
 };
 
-asyncProductTemplate();
+// asyncProductTemplate();
+
+
+form.addEventListener('submit', async (event) =>{
+  event.preventDefault();
+
+const id = form.elements.id.value;
+
+  
+
+  const { data } = await getElemetById(id)
+  
+
+singleProduct.innerHTML = createCardById(data);
+
+
+
+} )
